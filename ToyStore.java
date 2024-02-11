@@ -8,7 +8,7 @@ public class ToyStore {
     private PriorityQueue<Toy> toyQueue;
 
     public ToyStore() {
-        toyQueue = new PriorityQueue<>((t1, t2) -> t2.getFrequency() - t1.getFrequency());
+        toyQueue = new PriorityQueue<>((t1, t2) -> t2.getFrequency() - t1.getFrequency()); 
     }
 
     public void addToy(Toy toy) {
@@ -56,3 +56,7 @@ public class ToyStore {
         }
     }
 }
+
+//Возможно вместо лямбда-выражения можно было использовать Comparator.comparing(Toy::getFrequency).reversed()
+//Для ускорения кода вместо PriorityQueue можно использовать ArrayList с методом Collections.shuffle
+//Однако в задании четко сказано через что и как нужно делать программу
